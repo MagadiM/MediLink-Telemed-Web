@@ -1,0 +1,22 @@
+{
+  "name": "medilink-telemed-web",
+  "version": "1.0.0",
+  "description": "This repository will contain the code for a telemedicine application wit various features. The aim of the wesite is to link patients and doctors and help bridge distance through the internet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mysql2": "^2.2.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.4"
+  }
+}
