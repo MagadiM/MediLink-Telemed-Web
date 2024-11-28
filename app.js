@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 // inbuilt function used to parse data in the json format i.e {key:value}
 app.use(express.json())
 
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 })
