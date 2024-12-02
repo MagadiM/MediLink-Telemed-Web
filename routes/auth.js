@@ -16,10 +16,23 @@ router.post(`/signin`, loginPatient.loginpatient)
 
 router.post(`/bookappointment`, isAuthenticated, bookAppointment.bookAppointment)
 
-router.get(`/patient/viewdoctor`, isAuthenticated, bookAppointment.bookAppointment)
+router.get(`/patient/viewdoctor`, isAuthenticated, viewDoctor.doctor)
 router.get(`/patient/viewdoctor`, isAuthenticated, viewDoctor.find)
-router.get(`/viewpatient`, isAuthenticatedDoctor, viewoctor.viewpatient)
-router.get(`/viewpatient`, isAuthenticatedDoctor, viewdoctor.findpatient)
-router.get
+router.get(`/viewpatient`, isAuthenticatedDoctor, viewDoctor.viewpatient)
+router.get(`/viewpatient`, isAuthenticatedDoctor, viewDoctor.findpatient)
 
-module.export = router
+router.get(`/editpatient/:id`, isAuthenticateddoctor, viewDoctor.editpatient)
+router.post(`/editpatient/:id`, isAuthenticateddoctor, viewDoctor.updatepatient)
+router.get(`/delete/:id`, isAuthenticateddoctor, deleted.deleted)
+
+router.post(`/doctorregister`, registerDoctor.registerDoctor)
+router.post(`/logindoctor`, loginDoctor.logindoctor)
+
+router.post(`/admin`, admin.adminregister)
+router.post(`/admin`, admin.adminlogin)
+router.post(`/admin`, admin.updatedoctor)
+router.post(`/admin`, admin.updatepatient)
+
+router.get(`/admin`, admin.bookAppointment)
+
+module.exports = router

@@ -27,7 +27,7 @@ exports.find = (req, res)=>{
 }
 
 exports.viewpatient = (req, res) => {
-    db.query(`select patient_id, firstname, lastname, gender, phone from patients where email = ?`, (err, rows) => {
+    db.query(`select patient_id, firstname, lastname, gender, phone from patients where patient_id = ?`, (err, rows) => {
         if(err){
             console.log(err)
         } else {
@@ -49,7 +49,7 @@ exports.findpatient = (req, res) => {
 }
 
 exports.editpatient = (req, res) => {
-    db.query(`select * from patients where email= ?`, [req.params.id], (err, rows) => {
+    db.query(`select * from patients where patient_id = ?`, [req.params.id], (err, rows) => {
         if (err) {
             console.log(err)
         } else {
@@ -66,7 +66,7 @@ exports.updatepatient = (req, res) => {
             console.log(err)
             return res.redirect(`/viewpatient`)
         } else {
-            db,query(`select patient_id, firstname, lastname, gender, address, phone from patients where  email= ?`, (err, rows) => {
+            db,query(`select patient_id, firstname, lastname, gender, address, phone from patients where  patient_id = ?`, (err, rows) => {
                 if(err) {
                     console.log(err)
                 } else {

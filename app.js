@@ -1,5 +1,6 @@
 // Importing express dotenv mysql2 nodemon bcryptjs 
 const express = require('express')
+const routes = express.Router;
 const db = require('./database')
 const cookieParser = require(`cookie-parser`)
 const ejs = require('ejs')
@@ -22,12 +23,16 @@ app.use(express.json())
 
 
 // inbuilt function used to send data from client side when user fills the form
-// app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false}))
 
 // setting up a middleware 
 // inbuilt function used to parse data in the json format i.e {key:value}
 
 
+app.set('view engine', 'ejs')
+
+app.use(express.static(`public`))
+// app.use(express.static(public/images))
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
