@@ -5,8 +5,10 @@ const db = require('./database')
 const cookieParser = require(`cookie-parser`)
 const ejs = require('ejs')
 const mysql = require('mysql2')
+const cors = require('cors')
 const session = require('express-session')
 const path = require('path')
+
 require('dotenv').config()
 
 // intializing the server with the express method
@@ -26,14 +28,14 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 // setting up a middleware 
-// inbuilt function used to parse data in the json format i.e {key:value}
-
+app.use(`/`, require(`./routes/pages`))
+// app.use(`/`, require(`./routes/auth`))
 
 app.set('view engine', 'ejs')
 
 app.use(express.static(`public`))
-// app.use(express.static(public/images))
+app.use(express.static(`/public`))
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port $/{port}`);
 })
