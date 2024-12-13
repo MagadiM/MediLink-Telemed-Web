@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const cookieParser = require('cookie-parser')
-const {isAuthenticated} = require(`../database/auth`)
+const {isAuthenticated} = require(`../middlewares/auth`)
 const {isAuthenticatedDoctor} = require(`../middlewares/authDoctor`)
 
 router.get(``, (req, res) => {

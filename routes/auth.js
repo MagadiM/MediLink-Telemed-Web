@@ -1,5 +1,6 @@
 // helps manage navigation and routing
 const express = require('express')
+// const router = express.Router();
 const registerPatient = require(`../controllers/registerPatients`)
 const loginPatient = require(`../controllers/loginPatient`)
 const registerDoctor = require(`../controllers/registerDoctor`)
