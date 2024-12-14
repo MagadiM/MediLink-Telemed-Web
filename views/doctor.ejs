@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %> 
+    
+    <div class="title-header">
+        <h2>Doctor Dashboard</h2>
+    </div>
+    <div class="doctor-container">
+        <div class="doc-container">
+            <div class="user-info">
+                <h2>Doctor Data</h2>
+                <!-- Place your profile picture here -->
+                <div class="profile-picture">
+                    <img id="profile-img" src="placeholder.jpg" alt="Profile Picture"> <br>
+                    <input type="file" id="upload-img" accept="image/*" style="display: none;">
+                    <button id="upload-btn">Upload Picture</button>
+                </div>
+                <!-- patient data -->
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Specialization:</strong>Paeditrician</p>
+                <p><strong>Contact:</strong> johndoe@example.com</p>
+            </div>
+            <div class="doctor-dashboard">
+                <div class="section">
+                    <h3>Your Appointments</h3>
+                    <form>
+                        <label for="patient">Search Patient:</label>
+                        <input type="text" id="patient" name="patient" placeholder="Enter patient's Id" style="width: 100%; padding: 8px; margin-top: 5px; object-fit: contain;">
+                        <br><br>
+                        <button type="submit" style="padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Search Details</button>
+                    </form>
+                </div>
+                <div class="section">
+                    <h3>Manage Schedule</h3>
+                    <button class="button">View Calendar</button>
+            
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %> 
+    
+    </div>
+    <div class="title-header">
+        <h2>Patient Dashboard</h2>
+    </div>
+    <div class="patient-container">
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="section">
+                <h3>Upcoming Appointments</h3>
+                <p>Book appointments below!</p>
+            </div>
+            <div class="section">
+                <h3>Book Appointment</h3>
+                <form>
+                    <label for="doctor">Search Doctor:</label>
+                    <input type="text" id="doctor" name="doctor" placeholder="Enter doctor's name" style="width: 100%; padding: 8px; margin-top: 5px;">
+                    <br><br>
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" style="width: 100%; padding: 8px;">
+                    <br><br>
+                    <button type="submit" style="padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Book Appointment</button>
+                </form>
+            </div>
+            <div class="section">
+                <h2>Search for Doctors</h2>
+                <p>Search specialists by category, name, or location.</p>
+            </div>
+        </div>
+
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="user-info">
+                <h2>Patient Information</h2>
+                <!-- Place your profile picture here -->
+                <div class="profile-picture">
+                    <img id="profile-img" src="placeholder.jpg" alt="Profile Picture"><br>
+                    <input type="file" id="upload-img" accept="image/*" style="display: none;">
+                    <button id="upload-btn">Upload Picture</button>
+                </div>
+                <!-- patient data -->
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Age:</strong> 35</p>
+                <p><strong>Date of Birth:</strong> 10-10-1989</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Contact:</strong> johndoe@example.com</p>
+            </div>
+        </div>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+</body>
+</html>
