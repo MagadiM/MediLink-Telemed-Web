@@ -42,7 +42,7 @@ exports.patientregister = (req, res) => {
                 if(err){
                     console.log(err);
                 } else {
-                    res. render(`register`, {
+                    res. render(`/patient/register`, {
                         message: `Registration Successful`
                     })
                 }

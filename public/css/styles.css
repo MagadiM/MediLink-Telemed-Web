@@ -91,9 +91,10 @@ nav button:hover {
 .indexcontainer {
     text-align: center;
     max-width: 80%;
-    color: royalblue;
+    color: #136d0b;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    background-image: url(../images/cover.jpg);
 }
 
 /* About us page */
@@ -146,6 +147,13 @@ nav button:hover {
 }
 
 /* responsive about */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center;
+    object-fit: contain;
+  }
+}
 
 /* Services container */
 .service h1 {
@@ -193,9 +201,15 @@ nav button:hover {
 }
 
 /* services- responsive styling  */
+@media (max-width: 768px) {
+  .services-container .service-item {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+}
+
 @media (max-width: 480px) {
-  .service-container {
-    display: block;
+  .services-container .service-item {
+    flex: 1 1 100%; /* 1 item per row */
   }
 }
 
@@ -229,6 +243,19 @@ nav button:hover {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+/* responsive design for doctors section */
+@media (max-width: 768px ) {
+  .medical-provider {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .medical-provider {
+    flex: 1 1 100%; /* 1 item per row */
+  }
 }
 
 /* Why us section */

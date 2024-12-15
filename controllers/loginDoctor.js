@@ -21,7 +21,7 @@ exports.logindoctor = (req, res) => {
                             error: `Invalid Email or password!`
                         })
                     }
-                const token = jwt.sign({patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email}, process.env.JWT_SECRET, {
+                const token = jwt.sign({doctor_id: result[0].doctor_id, firstname: result[0].firstname, email: result[0].email}, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES
                 })
 
@@ -33,7 +33,7 @@ exports.logindoctor = (req, res) => {
                 }
 
                 res.cookie(`userRegister`, token, cookieoptions)
-                res.redirect(`doctor`)
+                res.redirect(`/doctor/doctor`)
             })
         }
 }

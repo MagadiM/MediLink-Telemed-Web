@@ -1,6 +1,6 @@
 const db = require(`../database`)
 const express = require(`express`)
-const { search } = require('./pages')
+//const { search } = require('./routes/pages.js')
 const router = express.Router()
 
 exports.doctor = (req, res) => {

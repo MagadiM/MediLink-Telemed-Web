@@ -10,6 +10,8 @@ const cors = require('cors')
 const session = require('express-session')
 const path = require('path')
 
+//const authRoutes = require('./routes/auth')
+//const pages = require('./routes/pages')
 require('dotenv').config()
 
 // intializing the server with the express method
@@ -23,13 +25,9 @@ app.use(express.json())
 
 // inbuilt function used to send data from client side when user fills the form
 app.use(express.urlencoded({extended: true}))
-
-// setting up a middleware 
-app.use(`/`, require(`./routes/pages`))
-app.use(`/`, require(`./routes/auth`))
+//app.use(authRoutes)
 
 // setting up static files from the public folder
-app.use(express.static(`/public`))
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -37,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: true }))
+
 
 //setting up a route for the default page
 app.get(`/`, (req, res) => {
@@ -47,12 +46,24 @@ app.get(`/patient/login`, (req, res) => {
     res.render(`login`);
 })
 
-app.post(`/login`, (req, res) => {
+app.get(`/patient/patient`, (req, res) => {
     res.render(`patient`);
+})
+
+app.get(`/patient/register`, (req, res) => {
+    res.render(`register`)
 })
 
 app.get(`/doctor/loginDoctor`, (req, res) => {
     res.render(`loginDoctor`)
+})
+
+app.get(`/doctor/doctor`, (req, res) => {
+    res.render(`doctor`)
+})
+
+app.get(`/doctor/registerDoctor`, (req, res) => {
+    res.render(`registerDoctor`)
 })
 
 app.get(`/contact`, (req, res) => {
@@ -60,14 +71,17 @@ app.get(`/contact`, (req, res) => {
 })
 
 app.post(`/register`, (req, res) => {
-    res.render(`register`)
+    res.send(`user info registered`)
 })
 
 app.post(`/registerDoctor`, (req, res) => {
-    res.render(`regiterDoctor`)
+    res.send(`Doctor registered successfully!`)
 })
 
-app.post 
+app.post(`/patient/login`, (req, res) => {
+    res.send(`Patient login successfully.`)
+})
+
 
 
 app.listen(port, () => {

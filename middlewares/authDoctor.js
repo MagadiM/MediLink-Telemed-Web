@@ -4,7 +4,7 @@ const cookieParser = require(`cookie-parser`)
 exports.isAuthenticateddoctor = (req, res, next) => {
     const token = req.cookies.userRegister
     if(!token) {
-        return res.render(`logindoctor`, {
+        return res.render(`loginDoctor`, {
             error: `Please Login, session expired`
         })
     }
@@ -15,6 +15,6 @@ exports.isAuthenticateddoctor = (req, res, next) => {
         next()
     } catch (error) {
         console.log(err)
-        return redirect(`/login`)
+        return redirect(`loginDoctor`)
     }
 }

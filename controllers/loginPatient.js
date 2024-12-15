@@ -35,7 +35,7 @@ exports.loginpatient = (req, res) => {
                 }
 
                 res.cookie(`userRegister`, token, cookieoptions)
-                res.redirect(`patient`)
+                res.redirect(`/patient/patient`)
             })
         }
 }

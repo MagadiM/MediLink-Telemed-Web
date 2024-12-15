@@ -8,14 +8,14 @@ const loginDoctor = require(`../controllers/loginDoctor`)
 const bookAppointment = require(`../controllers/bookappointment`)
 const viewDoctor = require(`../controllers/viewDoctor`)
 const admin = require(`../controllers/admin`)
-const router = require(`./pages`);
+//const { search } = require('./pages.js')
 const deleted = require(`../controllers/delete`)
 
 
-router.post(`/register`, registerPatient.registerPatient)
-router.post(`/login`, loginPatient.loginpatient)
+router.post(`/patient/register`, registerPatient.registerPatient)
+router.post(`login`, loginPatient.loginpatient)
 
-router.post(`/bookappointment`, isAuthenticated, bookAppointment.bookAppointment)
+//router.post(`/bookappointment`, isAuthenticated, bookAppointment.bookAppointment)
 
 router.get(`/patient/viewdoctor`, isAuthenticated, viewDoctor.doctor)
 router.get(`/patient/viewdoctor`, isAuthenticated, viewDoctor.find)
@@ -26,14 +26,14 @@ router.get(`/editpatient/:id`, isAuthenticateddoctor, viewDoctor.editpatient)
 router.post(`/editpatient/:id`, isAuthenticateddoctor, viewDoctor.updatepatient)
 router.get(`/delete/:id`, isAuthenticateddoctor, deleted.deleted)
 
-router.post(`/doctorregister`, registerDoctor.registerDoctor)
-router.post(`/logindoctor`, loginDoctor.logindoctor)
+router.post(`/controllers/registerDoctor`, registerDoctor.registerDoctor)
+router.post(`logindoctor`, loginDoctor.logindoctor)
 
-router.post(`/admin`, admin.adminregister)
-router.post(`/admin`, admin.adminlogin)
-router.post(`/admin`, admin.updatedoctor)
-router.post(`/admin`, admin.updatepatient)
+// router.post(`/admin`, admin.adminregister)
+// router.post(`/admin`, admin.adminlogin)
+// router.post(`/admin`, admin.updatedoctor)
+// router.post(`/admin`, admin.updatepatient)
 
-router.get(`/admin`, admin.bookAppointment)
+//router.get(`/admin`, admin.bookAppointment)
 
 module.exports = router
