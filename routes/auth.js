@@ -1,6 +1,6 @@
 // helps manage navigation and routing
 const express = require('express')
-// const router = express.Router();
+const router = express.Router();
 const registerPatient = require(`../controllers/registerPatients`)
 const loginPatient = require(`../controllers/loginPatient`)
 const registerDoctor = require(`../controllers/registerDoctor`)
@@ -12,8 +12,8 @@ const router = require(`./pages`);
 const deleted = require(`../controllers/delete`)
 
 
-router.post(`/signup`, registerPatient.registerPatient)
-router.post(`/signin`, loginPatient.loginpatient)
+router.post(`/register`, registerPatient.registerPatient)
+router.post(`/login`, loginPatient.loginpatient)
 
 router.post(`/bookappointment`, isAuthenticated, bookAppointment.bookAppointment)
 

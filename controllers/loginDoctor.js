@@ -33,7 +33,7 @@ exports.logindoctor = (req, res) => {
                 }
 
                 res.cookie(`userRegister`, token, cookieoptions)
-                res.redirect(`/dashboard`)
+                res.redirect(`doctor`)
             })
         }
 }

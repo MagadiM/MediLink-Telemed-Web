@@ -25,8 +25,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // setting up a middleware 
-// app.use(`/`, require(`./routes/pages`))
-// app.use(`/`, require(`./routes/auth`))
+app.use(`/`, require(`./routes/pages`))
+app.use(`/`, require(`./routes/auth`))
 
 // setting up static files from the public folder
 app.use(express.static(`/public`))
@@ -47,14 +47,27 @@ app.get(`/patient/login`, (req, res) => {
     res.render(`login`);
 })
 
-app.get(`/login`, (req, res) => {
-    res.render(`/patient`);
+app.post(`/login`, (req, res) => {
+    res.render(`patient`);
 })
 
 app.get(`/doctor/loginDoctor`, (req, res) => {
     res.render(`loginDoctor`)
 })
 
+app.get(`/contact`, (req, res) => {
+    res.render(`contact`)
+})
+
+app.post(`/register`, (req, res) => {
+    res.render(`register`)
+})
+
+app.post(`/registerDoctor`, (req, res) => {
+    res.render(`regiterDoctor`)
+})
+
+app.post 
 
 
 app.listen(port, () => {
